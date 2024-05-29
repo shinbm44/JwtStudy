@@ -37,7 +37,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests((auth) -> auth
                         // 로그인 회원가입 페이지는 모두 접근 가능
-                        .requestMatchers("/login", "/", "/join").permitAll()
+                        .requestMatchers("/login", "/", "/adminjoin", "userjoin").permitAll()
                         // /admin 경로에는 ADMIN 접근자만 접근 가능
                         .requestMatchers("/admin").hasRole("ADMIN")
                         // 나머지 페이지에는 로그인한 접근자만 접근 가능
