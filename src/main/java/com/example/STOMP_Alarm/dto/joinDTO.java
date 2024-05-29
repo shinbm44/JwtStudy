@@ -1,4 +1,4 @@
-package com.example.STOMP_Alarm.joinDTO;
+package com.example.STOMP_Alarm.dto;
 
 
 import lombok.Getter;

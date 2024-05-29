@@ -1,7 +1,7 @@
 package com.example.STOMP_Alarm.service;
 
 import com.example.STOMP_Alarm.entity.UserEntity;
-import com.example.STOMP_Alarm.joinDTO.joinDTO;
+import com.example.STOMP_Alarm.dto.joinDTO;
 import com.example.STOMP_Alarm.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

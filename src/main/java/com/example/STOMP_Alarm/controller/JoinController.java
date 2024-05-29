@@ -1,11 +1,9 @@
 package com.example.STOMP_Alarm.controller;
 
-import com.example.STOMP_Alarm.joinDTO.joinDTO;
+import com.example.STOMP_Alarm.dto.joinDTO;
 import com.example.STOMP_Alarm.service.JoinService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
