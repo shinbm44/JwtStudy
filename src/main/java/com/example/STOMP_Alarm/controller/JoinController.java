@@ -17,10 +17,20 @@ public class JoinController {
     private final JoinService joinService;
 
 
-    @PostMapping("/join")
-    public ResponseEntity<String> join(@RequestBody joinDTO joinDTO) {
+    @PostMapping("/adminjoin")
+    public ResponseEntity<String> adminjoin(@RequestBody joinDTO joinDTO) {
 
-        joinService.JoinService(joinDTO);
+        joinService.adminJoinService(joinDTO);
+
+
+        return ResponseEntity.status(201).body("회원가입성공");
+    }
+
+
+    @PostMapping("/userjoin")
+    public ResponseEntity<String> userjoin(@RequestBody joinDTO joinDTO) {
+
+        joinService.userJoinService(joinDTO);
 
 
         return ResponseEntity.status(201).body("회원가입성공");

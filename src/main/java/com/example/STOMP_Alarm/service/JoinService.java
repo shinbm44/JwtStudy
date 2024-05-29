@@ -15,7 +15,7 @@ public class JoinService {
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
 
-    public void JoinService(joinDTO dto) {
+    public void adminJoinService(joinDTO dto) {
 
         String username = dto.getUsername();
         String password = dto.getPassword();
@@ -31,6 +31,26 @@ public class JoinService {
         data.setUsername(username);
         data.setPassword(bCryptPasswordEncoder.encode(password));
         data.setRole("ROLE_ADMIN");
+
+        userRepository.save(data);
+    }
+
+    public void userJoinService(joinDTO dto) {
+
+        String username = dto.getUsername();
+        String password = dto.getPassword();
+
+        Boolean isExists = userRepository.existsByUsername(username);
+
+        if (isExists) {
+            return;
+        }
+
+        UserEntity data = new UserEntity();
+
+        data.setUsername(username);
+        data.setPassword(bCryptPasswordEncoder.encode(password));
+        data.setRole("ROLE_USER");
 
         userRepository.save(data);
     }
