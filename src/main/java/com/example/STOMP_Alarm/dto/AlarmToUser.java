@@ -1,5 +1,6 @@
 package com.example.STOMP_Alarm.dto;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,8 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Alarm {
+public class AlarmToUser {
     private String title;
     private String message;
+    private String recipient;
 }
