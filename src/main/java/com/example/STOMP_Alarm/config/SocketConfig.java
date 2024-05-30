@@ -14,7 +14,6 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @EnableWebSocketMessageBroker
 public class SocketConfig implements WebSocketMessageBrokerConfigurer {
 
-    private final JWTFilter jwtFilter;
     private final JwtChannelInterceptor jwtChannelInterceptor;
 
 
@@ -28,10 +27,11 @@ public class SocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/our-websockt")
+        registry.addEndpoint("/ws")
                 .setAllowedOrigins("*")
                 .withSockJS();
-
+        registry.addEndpoint("/ws")
+                .setAllowedOrigins("*");
     }
 
     @Override

@@ -44,11 +44,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        //csrf disable
+//        //csrf disable
         http
                 .csrf((auth) -> auth.disable());
 
-        //From 로그인 방식 disable
+//        //From 로그인 방식 disable
         http
                 .formLogin((auth) -> auth.disable());
 
@@ -56,11 +56,12 @@ public class SecurityConfig {
         http
                 .httpBasic((auth) -> auth.disable());
 
+
         //경로별 인가 작업
         http
                 .authorizeHttpRequests((auth) -> auth
                         // 로그인 회원가입 페이지는 모두 접근 가능
-                        .requestMatchers("/login", "/", "/adminjoin", "userjoin").permitAll()
+                        .requestMatchers("/login", "/", "/adminjoin", "/userjoin", "/ws").permitAll()
                         // /admin 경로에는 ADMIN 접근자만 접근 가능
                         .requestMatchers("/admin").hasRole("ADMIN")
                         // 나머지 페이지에는 로그인한 접근자만 접근 가능
@@ -73,7 +74,7 @@ public class SecurityConfig {
         http
                 .addFilterAt(new LoginFilter(authenticationManager(authenticationConfiguration), jwtUtil), UsernamePasswordAuthenticationFilter.class);
 
-        // JWT 방식에서는 세션이 STATELESS 방식이다.
+//        // JWT 방식에서는 세션이 STATELESS 방식이다.
         // 세션 설정
         http
                 .sessionManagement((session) -> session
