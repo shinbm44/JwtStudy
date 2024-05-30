@@ -1,7 +1,7 @@
 package com.example.STOMP_Alarm.service;
 
 import com.example.STOMP_Alarm.entity.UserEntity;
-import com.example.STOMP_Alarm.dto.joinDTO;
+import com.example.STOMP_Alarm.dto.JoinDTO;
 import com.example.STOMP_Alarm.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -15,7 +15,7 @@ public class JoinService {
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
 
-    public void adminJoinService(joinDTO dto) {
+    public void adminJoinService(JoinDTO dto) {
 
         String username = dto.getUsername();
         String password = dto.getPassword();
@@ -35,7 +35,7 @@ public class JoinService {
         userRepository.save(data);
     }
 
-    public void userJoinService(joinDTO dto) {
+    public void userJoinService(JoinDTO dto) {
 
         String username = dto.getUsername();
         String password = dto.getPassword();

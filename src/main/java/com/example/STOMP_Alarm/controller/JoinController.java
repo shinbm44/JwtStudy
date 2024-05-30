@@ -1,6 +1,6 @@
 package com.example.STOMP_Alarm.controller;
 
-import com.example.STOMP_Alarm.dto.joinDTO;
+import com.example.STOMP_Alarm.dto.JoinDTO;
 import com.example.STOMP_Alarm.service.JoinService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ public class JoinController {
 
 
     @PostMapping("/adminjoin")
-    public ResponseEntity<String> adminjoin(@RequestBody joinDTO joinDTO) {
+    public ResponseEntity<String> adminjoin(@RequestBody JoinDTO joinDTO) {
 
         joinService.adminJoinService(joinDTO);
 
@@ -26,7 +26,7 @@ public class JoinController {
 
 
     @PostMapping("/userjoin")
-    public ResponseEntity<String> userjoin(@RequestBody joinDTO joinDTO) {
+    public ResponseEntity<String> userjoin(@RequestBody JoinDTO joinDTO) {
 
         joinService.userJoinService(joinDTO);
 
