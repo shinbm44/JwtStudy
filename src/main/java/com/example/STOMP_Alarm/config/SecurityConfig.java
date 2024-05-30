@@ -1,5 +1,6 @@
 package com.example.STOMP_Alarm.config;
 
+import com.example.STOMP_Alarm.jwt.JWTFilter;
 import com.example.STOMP_Alarm.jwt.JWTUtil;
 import com.example.STOMP_Alarm.jwt.LoginFilter;
 import lombok.RequiredArgsConstructor;
@@ -64,6 +65,10 @@ public class SecurityConfig {
                         .requestMatchers("/admin").hasRole("ADMIN")
                         // 나머지 페이지에는 로그인한 접근자만 접근 가능
                         .anyRequest().authenticated());
+
+        http
+                .addFilterBefore(new JWTFilter(jwtUtil), LoginFilter.class);
+
 
         http
                 .addFilterAt(new LoginFilter(authenticationManager(authenticationConfiguration), jwtUtil), UsernamePasswordAuthenticationFilter.class);
