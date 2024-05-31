@@ -28,6 +28,4 @@ public class AlarmController {
         String username = alarmToUser.getRecipient();
         messagingTemplate.convertAndSendToUser(username, "/queue/alarms", alarmToUser);
     }
-
-
 }
