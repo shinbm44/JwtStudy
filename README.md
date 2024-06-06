@@ -1,4 +1,4 @@
-## JWT STUDY 및 STOMP 기능 구현 과제
+## JWT STUDY 및 STOMP 기능 구현
 
 #### 웹소켓 알람 기능 구현
 ##### Spring security와 jwt 기술을 공부하여 접목하였습니다. (아래와 같은 구조도를 따라서)
